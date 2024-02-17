@@ -30,41 +30,61 @@ function handleKeyboardButtonPress(event){
     // check matched or not
     if(playerPressed === expectedAlphabet){
         console.log('you gote a point');
-        console.log('you have pressed correctly', expectedAlphabet);
+        // console.log('you have pressed correctly', expectedAlphabet);
         // update score:
         // 1.get the current score
-        const currentScoreElement = document.getElementById('current-score');
-        const currentScoreText = currentScoreElement.innerText;
-        const currentScore = parseInt(currentScoreText);
-        console.log(currentScoreText);
+        // const currentScoreElement = document.getElementById('current-score');
+        const currentScore = getTextElementValueById('current-score');
+       
+        const updatedScore = currentScore + 1;
+        setTextElementValueById('current-score', updatedScore);
 
         // 2. incress score by 1
-        const newScore = currentScore + 1;
-       
+        // const newScore = currentScore + 1;
+        // setTextElementValueById('current-score', newScore);
+        
+    //  ---------------------
+            // const currentScoreText = currentScoreElement.innerText;
+        // const currentScore = parseInt(currentScoreText);
+        // console.log(currentScoreText);
+
         // 3. show the updated score
     
-        currentScoreElement.innerText = newScore;
-        // start a new round
-        removeBackgroundColorById(expectedAlphabet);
-        continueGame();
+        // currentScoreElement.innerText = newScore;
+// --------------------------
+           // start a new round
+           removeBackgroundColorById(expectedAlphabet);
+           continueGame();
     }
     else{
-        console.log('you missed. you lost a life.')
-        // step-1: get the current life number
-        const currentLifeElement = document.getElementById('current-life');
-        const currentLifeText = currentLifeElement.innerText;
-        const currentLife =parseInt(currentLifeText);
 
-        // step-2: reduce the life count
-        const newLife = currentLife -1;
-        // step-3: display the updated life count
-        currentLifeElement.innerText = newLife;
+        console.log('dhurrr vaiya va apu...right key press koro');
 
+        const currentLife = getTextElementValueById('current-life');
+        const updatedLife = currentLife - 1;
+        setTextElementValueById('current-life', updatedLife);
 
-        if(newLife === 0){
-            console.log('game over');
+        if(updatedLife === 0){
             gameOver();
         }
+        // ---------------------
+        // console.log('you missed. you lost a life.')
+        // // step-1: get the current life number
+        // const currentLifeElement = document.getElementById('current-life');
+        // const currentLifeText = currentLifeElement.innerText;
+        // const currentLife =parseInt(currentLifeText);
+
+        // // step-2: reduce the life count
+        // const newLife = currentLife -1;
+        // // step-3: display the updated life count
+        // currentLifeElement.innerText = newLife;
+
+
+        // if(newLife === 0){
+        //     console.log('game over');
+        //     gameOver();
+        // }
+        // ------------------
     }
 }
 // capture keyboard key press
@@ -91,9 +111,10 @@ function play(){
     continueGame();
 
     // reset score and life
-    // setTextElementValueById('current-life', 5);
+    setTextElementValueById('current-life', 5);
    
     setTextElementValueById('current-score', 0);
+    
 }
 
 
@@ -103,7 +124,7 @@ function gameOver(){
 
     // update final score
     // 1. get the final score
-    const gameScore =document.getElementById('current-score');
+    const gameScore =getTextElementValueById('current-score');
     setTextElementValueById('game-score', gameScore);
     // clear the last highlite alphabet
 const currentAlphabet =getElementTextById('random-alphabet');
