@@ -19,15 +19,15 @@
 <body class="font-poppins">
    <main class="min-h-screen bg-[#010313] bg-[url(images/background.png)] bg-no-repeat bg-center">
     <!-- home screen -->
-    <section class="home text-white flex flex-col h-screen justify-center items-center hidden">
+    <section id="home-screen" class="text-white flex flex-col h-screen justify-center items-center">
        <div class="flex flex-col items-center gap-8">
         <h1 class="text-9xl text-center uppercase font-anton ">Alpha Clash Pro</h1>
         <p>Unleash Your Keyboard kun g Fu : Press "enter" to play</p>
-        <button class="btn bg-white text-black">Play Now</button>
+        <button onclick="play()" class="btn bg-white text-black">Play Now</button>
        </div>
     </section>
     <!-- play ground -->
-    <section class="play-ground">
+    <section id="play-ground-screen" class=" hidden">
         <!-- play ground container -->
         <div class="flex flex-col items-center gap-20 pt-20">
             <!-- screen -->
@@ -36,44 +36,44 @@
                     <p class="bg-[#2F2941] px-6 pb-4 text-white rounded-b-xl">Don't watch keyboard while playing...</p>
                 </div>
                 <div class="flex justify-center items-center h-full">
-                    <p class="text-black text-9xl font-bold ">Y</p>
+                    <p id="random-alphabet" class="text-black text-9xl font-bold uppercase">Y</p>
                 </div>
      
             </div>
             <!-- keyboard start-->
             <div>
                 <div class="flex justify-center gap-1 my-1 w-full">
-                    <kbd class="kbd bg-black text-white bg-black">q</kbd>
-                    <kbd class="kbd bg-black text-white bg-black">w</kbd>
-                    <kbd class="kbd bg-black text-white">e</kbd>
-                    <kbd class="kbd bg-black text-white">r</kbd>
-                    <kbd class="kbd bg-black text-white">t</kbd>
-                    <kbd class="kbd bg-black text-white">y</kbd>
-                    <kbd class="kbd bg-black text-white">u</kbd>
-                    <kbd class="kbd bg-black text-white">i</kbd>
-                    <kbd class="kbd bg-black text-white">o</kbd>
-                    <kbd class="kbd bg-black text-white">p</kbd>
+                    <kbd id="q" class="kbd">q</kbd>
+                    <kbd id="w" class="kbd">w</kbd>
+                    <kbd id="e" class="kbd">e</kbd>
+                    <kbd id="r" class="kbd">r</kbd>
+                    <kbd id="t" class="kbd">t</kbd>
+                    <kbd id="y" class="kbd">y</kbd>
+                    <kbd id="u" class="kbd">u</kbd>
+                    <kbd id="i" class="kbd">i</kbd>
+                    <kbd id="o" class="kbd">o</kbd>
+                    <kbd id="p" class="kbd">p</kbd>
                   </div>
                   <div class="flex justify-center gap-1 my-1 w-full">
-                    <kbd class="kbd bg-black text-white">a</kbd>
-                    <kbd class="kbd bg-black text-white">s</kbd>
-                    <kbd class="kbd bg-black text-white">d</kbd>
-                    <kbd class="kbd bg-black text-white">f</kbd>
-                    <kbd class="kbd bg-black text-white">g</kbd>
-                    <kbd class="kbd bg-black text-white">h</kbd>
-                    <kbd class="kbd bg-black text-white">j</kbd>
-                    <kbd class="kbd bg-black text-white">k</kbd>
-                    <kbd class="kbd bg-black text-white">l</kbd>
+                    <kbd id="a" class="kbd">a</kbd>
+                    <kbd id="s" class="kbd">s</kbd>
+                    <kbd id="d" class="kbd">d</kbd>
+                    <kbd id="f" class="kbd">f</kbd>
+                    <kbd id="g" class="kbd">g</kbd>
+                    <kbd id="h" class="kbd">h</kbd>
+                    <kbd id="j" class="kbd">j</kbd>
+                    <kbd id="k" class="kbd">k</kbd>
+                    <kbd id="l" class="kbd">l</kbd>
                   </div> 
                   <div class="flex justify-center gap-1 my-1 w-full">
-                    <kbd class="kbd bg-black text-white">z</kbd>
-                    <kbd class="kbd bg-black text-white">x</kbd>
-                    <kbd class="kbd bg-black text-white">c</kbd>
-                    <kbd class="kbd bg-black text-white">v</kbd>
-                    <kbd class="kbd bg-black text-white">b</kbd>
-                    <kbd class="kbd bg-black text-white">n</kbd>
-                    <kbd class="kbd bg-black text-white">m</kbd>
-                    <kbd class="kbd bg-black text-white">/</kbd>
+                    <kbd id="z" class="kbd">z</kbd>
+                    <kbd id="x" class="kbd">x</kbd>
+                    <kbd id="c" class="kbd">c</kbd>
+                    <kbd id="v" class="kbd">v</kbd>
+                    <kbd id="b" class="kbd">b</kbd>
+                    <kbd id="n" class="kbd">n</kbd>
+                    <kbd id="m" class="kbd">m</kbd>
+                    <kbd id="/" class="kbd">/</kbd>
                   </div>
             </div>
             <!-- keyboard end -->
@@ -94,10 +94,17 @@
             </div>
         </div>
     </section>
-    <section class="score">
-        
+    <!-- score section -->
+    <section class="score flex justify-center min-h-screen items-center hidden">
+        <div class="text-white text-center border-2 p-8 bg-[#FFFFFF33] rounded-3xl">
+            <h1 class="text-8xl"><span class="font-extrabold">Score:<span>14</span>
+            </h1>
+            <button class="btn font-bold mt-2">Play Again</button>
+            <p class="mt-4">Practice will make you perfect</p>
+        </div>
     </section>
    </main>
-    
+<script src="script/alpha-clash.js"></script>
+<script src="script/utility.js"></script>
 </body>
 </html>
